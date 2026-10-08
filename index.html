@@ -1,0 +1,155 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Du lịch Việt Nam</title>
+  <style>
+/* ===== MOBILE FIRST (mặc định) ===== */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: #fff7ed;
+  color: #1f2937;
+  line-height: 1.5;
+}
+
+/* ===== TRANG BÌA ===== */
+.cover {
+  min-height: 115vh;
+  display: flex;
+  align-items: flex-end;      /* nút nằm phía dưới, không che chữ VIETNAM */
+  justify-content: center;
+  padding: 24px 24px 48px;
+  background:
+    linear-gradient(rgba(0,0,0,.15), rgba(0,0,0,.15)),
+    url("https://i.pinimg.com/736x/c5/64/60/c564609fed311991e8da649c160c6678.jpg") center top / cover no-repeat,
+    linear-gradient(135deg, #dc2626, #f59e0b);
+}
+.btn {
+  display: inline-block;
+  background: #dc2626;
+  color: #fff;
+  padding: 14px 32px;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 700;
+  box-shadow: 0 4px 14px rgba(0,0,0,.35);
+}
+.btn:hover { background: #b91c1c; }
+
+/* ===== TIÊU ĐỀ PHẦN ĐIỂM ĐẾN ===== */
+.title {
+  text-align: center;
+  padding: 32px 16px 0;
+  font-size: 1.8rem;
+  color: #dc2626;
+}
+
+/* ===== CÁC THẺ (div) ===== */
+.container {
+  padding: 16px;
+  display: flex;
+  flex-direction: column; /* mobile: xếp dọc */
+  gap: 16px;
+}
+
+.card {
+  background: #fff;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 4px 14px rgba(0,0,0,.12);
+  border-top: 6px solid;
+}
+.card-1 { border-color: #0ea5e9; }
+.card-2 { border-color: #f59e0b; }
+.card-3 { border-color: #22c55e; }
+
+.card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  display: block;
+}
+.card-text { padding: 16px; }
+.card-text h2 { margin-bottom: 6px; }
+.card-1 h2 { color: #0284c7; }
+.card-2 h2 { color: #d97706; }
+.card-3 h2 { color: #16a34a; }
+
+footer {
+  background: #1f2937;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+}
+
+/* ===== MEDIA QUERY 1: Tablet (từ 600px) =====
+   div chia 2 cột, ảnh cao hơn */
+@media (min-width: 600px) {
+  .title { font-size: 2.2rem; }
+
+  .container {
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 24px;
+  }
+  .card { width: calc(50% - 8px); }
+  .card img { height: 220px; }
+}
+
+/* ===== MEDIA QUERY 2: Desktop (từ 992px) =====
+   div chia 3 cột, đổi màu nền cho khác biệt */
+@media (min-width: 992px) {
+  body { background: #fef3c7; }
+
+  .container {
+    max-width: 1100px;
+    margin: 0 auto;
+    flex-wrap: nowrap;
+  }
+  .card { width: 33.333%; }
+  .card img { height: 260px; }
+  .card:hover { transform: translateY(-6px); transition: .2s; }
+}
+  </style>
+</head>
+<body>
+  <section class="cover">
+    <a href="#diem-den" class="btn">Khám phá ngay</a>
+  </section>
+
+  <h2 class="title" id="diem-den">Những Điểm Đến Nổi Tiếng Ở Việt Nam</h2>
+
+  <main class="container">
+    <div class="card card-1">
+      <img src="https://i.pinimg.com/1200x/b7/8d/a3/b78da3c8a98d082b8a70b7dd71bbf512.jpg" alt="Vịnh Hạ Long">
+      <div class="card-text">
+        <h2>Vịnh Hạ Long</h2>
+        <p>Hàng nghìn đảo đá vôi nổi trên mặt nước xanh ngọc.</p>
+      </div>
+    </div>
+
+    <div class="card card-2">
+      <img src="https://i.pinimg.com/736x/9f/c3/53/9fc3538fcef49d9d2a157ec24a17349f.jpg" alt="Hội An">
+      <div class="card-text">
+        <h2>Hội An</h2>
+        <p>Phố cổ lung linh với đèn lồng đủ màu mỗi tối.</p>
+      </div>
+    </div>
+
+    <div class="card card-3">
+      <img src="https://i.pinimg.com/736x/ec/7f/68/ec7f687227b43460ec794b6cd7be9625.jpg" alt="Sa Pa">
+      <div class="card-text">
+        <h2>Sa Pa</h2>
+        <p>Ruộng bậc thang và núi mờ sương ở vùng cao Tây Bắc.</p>
+      </div>
+    </div>
+  </main>
+
+  <footer>© 2026 – Bài tập Media Query</footer>
+</body>
+</html>
